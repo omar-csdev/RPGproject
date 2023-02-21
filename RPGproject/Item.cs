@@ -1,4 +1,4 @@
-class Item{
+public class Item{
     public int item_ID;
     public string item_name;
     public string item_name_plural;
