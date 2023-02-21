@@ -20,8 +20,13 @@
 
         if (count == 0) 
         {
-            this.TheCountedItemList.Add(new CountedItem(item));
+            this.TheCountedItemList.Add(new CountedItem(item, 1));
         }
+    }
+
+    public void AddCountedItem(CountedItem item) 
+    {
+        this.TheCountedItemList.Add(item);
     }
 
     public void DisplayItems()
