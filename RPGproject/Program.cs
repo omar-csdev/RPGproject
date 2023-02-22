@@ -13,316 +13,324 @@
 int room = 1;
 int prompt = 0;
 Console.WriteLine("Useful commands:\r\n- (/N/E/S/W) , inspect map, quit");
-while (room == 1)
+
+bool asking = true;
+while (asking)
 {
-    if (prompt == 0)
+    while (room == 1)
     {
-        Console.WriteLine("Your house");
-        Console.WriteLine("This is where you live.");
-        prompt = 1;
-        Console.WriteLine(">>  ");
-        string room1 = Console.ReadLine();
-        Console.WriteLine(room1);
-        if (room1.ToLower() == "N")
+        if (prompt == 0)
         {
-            room = 2;
-            prompt = 0;
-        }
-        else if (room1.ToLower() == "E" || room1.ToLower() == "S" || room1.ToLower() == "W")
-        {
-            Console.WriteLine("There is a river here, you can't walk onto that.");
-        }
-        else if (room1.ToLower() == "quit")
-        {
-            Environment.Exit(0);
-        }
-        else
-        {
-            Console.WriteLine("I Dont understand that commend");
+            Console.WriteLine("Your house");
+            Console.WriteLine("This is where you live.");
+            Console.WriteLine(">>  ");
+            string room1 = Console.ReadLine();
+            Console.WriteLine(room1);
+            if (room1.ToUpper() == "N")
+            {
+                room = 2;
+                prompt = 0;
+            }
+            else if (room1.ToUpper() == "E" || room1.ToUpper() == "S" || room1.ToUpper() == "W")
+            {
+                Console.WriteLine("There is a river here, you can't walk onto that.");
+            }
+            else if (room1.ToLower() == "quit")
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.WriteLine("I Dont understand that command");
+            }
         }
     }
-}
-while (room == 2)
-{
-    if (prompt == 0)
+    while (room == 2)
     {
-        Console.WriteLine("TownSquare");
-        Console.WriteLine("This is the townsquare.");
-        prompt = 1;
-        Console.WriteLine(">>  ");
-        string room1 = Console.ReadLine();
-        if (room1.ToLower() == "N")
+        if (prompt == 0)
         {
-            room = 5;
-            prompt = 0;
-        }
-        else if (room1.ToLower() == "E")
-        {
-            room = 7;
-            prompt = 0;
-        }
-        else if (room1.ToLower() == "S")
-        {
-            room = 1;
-            prompt = 0;
-        }
-        else if (room1.ToLower() == "W")
-        {
-            room = 3;
-            prompt = 0;
-            Console.WriteLine("Farmer's place");
-        }
-        else if (room1.ToLower() == "quit")
-        {
-            Environment.Exit(0);
+            Console.WriteLine("TownSquare");
+            Console.WriteLine("This is the townsquare.");
+            Console.WriteLine(">>  ");
+            string room1 = Console.ReadLine();
+            if (room1.ToUpper() == "N")
+            {
+                room = 5;
+                prompt = 0;
+            }
+            else if (room1.ToUpper() == "E")
+            {
+                room = 7;
+                prompt = 0;
+            }
+            else if (room1.ToUpper() == "S")
+            {
+                room = 1;
+                prompt = 0;
+            }
+            else if (room1.ToUpper() == "W")
+            {
+                room = 3;
+                prompt = 0;
+                Console.WriteLine("Farmer's place");
+            }
+            else if (room1.ToLower() == "quit")
+            {
+                Environment.Exit(0);
+            }
+
+            else
+            {
+                Console.WriteLine("I Dont understand that command");
+            }
         }
     }
-}
-while (room == 3)
-{
-    if (prompt == 0)
+    while (room == 3)
     {
-        Console.WriteLine("Farmer's place");
-        Console.WriteLine("This is the Farmer's place");
-        prompt = 1;
-        Console.WriteLine(">>  ");
-        string room1 = Console.ReadLine();
-        if (room1.ToLower() == "N")
-        {
-            Console.WriteLine("There is a river here, you can't walk onto that.");
-        }
-        else if (room1.ToLower() == "E")
-        {
-            room = 2;
-            prompt = 0;
-        }
-        else if (room1.ToLower() == "S")
-        {
-            Console.WriteLine("There is a river here, you can't walk onto that.");
-        }
-        else if (room1.ToLower() == "W")
-        {
-            Console.WriteLine("There is a Field over here.");
-            room = 4;
-            prompt = 0;
-        }
-        else if (room1.ToLower() == "quit")
-        {
-            Environment.Exit(0);
-        }
-    }
-}
-while (room == 4)
-{
-    if (prompt == 0)
-    {
-        Console.WriteLine("Farmer's Field");
-        Console.WriteLine("This looks like a harvest field. Maybe u cand do something here.");
-        prompt = 1;
-        Console.WriteLine(">>  ");
-        string room1 = Console.ReadLine();
-        Console.WriteLine(room1);
-        if (room1.ToLower() == "N")
-        {
-            Console.WriteLine("There is a river here, you can't walk onto that.");
-        }
-        else if (room1.ToLower() == "E")
+        if (prompt == 0)
         {
             Console.WriteLine("Farmer's place");
+            Console.WriteLine("This is the Farmer's place");
+            Console.WriteLine(">>  ");
+            string room1 = Console.ReadLine();
+            if (room1.ToUpper() == "N")
+            {
+                Console.WriteLine("There is a river here, you can't walk onto that.");
+            }
+            else if (room1.ToUpper() == "E")
+            {
+                room = 2;
+                prompt = 0;
+            }
+            else if (room1.ToUpper() == "S")
+            {
+                Console.WriteLine("There is a river here, you can't walk onto that.");
+            }
+            else if (room1.ToUpper() == "W")
+            {
+                Console.WriteLine("There is a Field over here.");
+                room = 4;
+                prompt = 0;
+            }
+            else if (room1.ToLower() == "quit")
+            {
+                Environment.Exit(0);
+            }
+
+            else
+            {
+                Console.WriteLine("I Dont understand that command");
+            }
         }
-        else if (room1.ToLower() == "S")
+    }
+    while (room == 4)
+    {
+        if (prompt == 0)
         {
-            Console.WriteLine("There is a river here, you can't walk onto that.");
+            Console.WriteLine("Farmer's Field");
+            Console.WriteLine("This looks like a harvest field. Maybe u cand do something here.");
+            Console.WriteLine(">>  ");
+            string room1 = Console.ReadLine();
+            Console.WriteLine(room1);
+            if (room1.ToUpper() == "N")
+            {
+                Console.WriteLine("There is a river here, you can't walk onto that.");
+            }
+            else if (room1.ToUpper() == "E")
+            {
+                Console.WriteLine("Farmer's place");
+            }
+            else if (room1.ToUpper() == "S")
+            {
+                Console.WriteLine("There is a river here, you can't walk onto that.");
+            }
+            else if (room1.ToUpper() == "W")
+            {
+                Console.WriteLine("There is a river here, you can't walk onto that.");
+            }
+            else if (room1.ToLower() == "quit")
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.WriteLine("I Dont understand that command");
+            }
         }
-        else if (room1.ToLower() == "W")
+    }
+
+    while (room == 5)
+    {
+        if (prompt == 0)
         {
-            Console.WriteLine("There is a river here, you can't walk onto that.");
+            Console.WriteLine("Alchemist’s hut");
+            Console.WriteLine("There seems to be a alchemist over here. Let's check this place out");
+            Console.WriteLine(">>  ");
+            string room1 = Console.ReadLine();
+            Console.WriteLine(room1);
+            if (room1.ToUpper() == "N")
+            {
+                room = 6;
+                prompt = 0;
+            }
+            else if (room1.ToUpper() == "E")
+            {
+                Console.WriteLine("There is a river here, you can't walk onto that.");
+            }
+            else if (room1.ToUpper() == "S")
+            {
+                room = 2;
+                prompt = 0;
+            }
+            else if (room1.ToUpper() == "W")
+            {
+                Console.WriteLine("There is a river here, you can't walk onto that.");
+            }
+            else if (room1.ToLower() == "quit")
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.WriteLine("I Dont understand that command");
+            }
         }
-        else if (room1.ToLower() == "quit")
+    }
+
+    while (room == 6)
+    {
+        if (prompt == 0)
         {
-            Environment.Exit(0);
+            Console.WriteLine("Alchemist’s garden");
+            Console.WriteLine(">>  ");
+            string room1 = Console.ReadLine();
+            Console.WriteLine(room1);
+            if (room1.ToUpper() == "N")
+            {
+                Console.WriteLine("There is a river here, you can't walk onto that.");
+            }
+            else if (room1.ToUpper() == "E")
+            {
+                Console.WriteLine("There is a river here, you can't walk onto that.");
+            }
+            else if (room1.ToUpper() == "S")
+            {
+                room = 5;
+                prompt = 0;
+            }
+            else if (room1.ToUpper() == "W")
+            {
+                Console.WriteLine("There is a river here, you can't walk onto that.");
+            }
+            else if (room1.ToLower() == "quit")
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.WriteLine("I Dont understand that command");
+            }
         }
-        else
+    }
+
+    while (room == 7)
+    {
+        if (prompt == 0)
         {
-            Console.WriteLine("I Dont understand that commend");
+            Console.WriteLine("Guard post");
+            Console.WriteLine(">>  ");
+            string room1 = Console.ReadLine();
+            Console.WriteLine(room1);
+            if (room1.ToUpper() == "E")
+            {
+                room = 8;
+                prompt = 0;
+            }
+            else if (room1.ToUpper() == "S" || room1.ToUpper() == "N" || room1.ToUpper() == "W")
+            {
+                Console.WriteLine("There is a river here, you can't walk onto that.");
+            }
+            else if (room1.ToLower() == "quit")
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.WriteLine("I Dont understand that command");
+            }
+        }
+    }
+
+    while (room == 8)
+    {
+        if (prompt == 0)
+        {
+            Console.WriteLine("Bridge");
+            Console.WriteLine(">>  ");
+            string room1 = Console.ReadLine();
+            Console.WriteLine(room1);
+            if (room1.ToUpper() == "N")
+            {
+                room = 2;
+                prompt = 0;
+            }
+            else if (room1.ToUpper() == "E")
+            {
+                Console.WriteLine("There seems to be a spider forest ");
+            }
+            else if (room1.ToUpper() == "S")
+            {
+                Console.WriteLine("The road seems to be blocked by fallen trees and rocks. U can't go here.");
+            }
+            else if (room1.ToUpper() == "W")
+            {
+                Console.WriteLine("There is a river here, you can't walk onto that.");
+            }
+            else if (room1.ToLower() == "quit")
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.WriteLine("I Dont understand that command");
+            }
+        }
+    }
+    while (room == 9)
+    {
+        if (prompt == 0)
+        {
+            Console.WriteLine("Spider forest");
+            Console.WriteLine(">>  ");
+            string room1 = Console.ReadLine();
+            Console.WriteLine(room1);
+            if (room1.ToUpper() == "N")
+            {
+                Console.WriteLine("You can't go here");
+            }
+            else if (room1.ToUpper() == "E")
+            {
+                Console.WriteLine("There seems to be a large forest blocking the road.");
+            }
+            else if (room1.ToUpper() == "S")
+            {
+                Console.WriteLine("The road seems to be blocked by fallen trees and rocks. U can't go here.");
+            }
+            else if (room1.ToUpper() == "W")
+            {
+                Console.WriteLine("You went back to the bridge");
+            }
+            else if (room1.ToLower() == "quit")
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.WriteLine("I Dont understand that command");
+            }
         }
     }
 }
 
-while (room == 5)
-{
-    if (prompt == 0)
-    {
-        Console.WriteLine("Alchemist’s hut");
-        Console.WriteLine("There seems to be a alchemist over here. Let's check this place out");
-        prompt = 1;
-        Console.WriteLine(">>  ");
-        string room1 = Console.ReadLine();
-        Console.WriteLine(room1);
-        if (room1.ToLower() == "N")
-        {
-            room = 6;
-            prompt = 0;
-        }
-        else if (room1.ToLower() == "E")
-        {
-            Console.WriteLine("There is a river here, you can't walk onto that.");
-        }
-        else if (room1.ToLower() == "S")
-        {
-            room = 2;
-            prompt = 0;
-        }
-        else if (room1.ToLower() == "W")
-        {
-            Console.WriteLine("There is a river here, you can't walk onto that.");
-        }
-        else if (room1.ToLower() == "quit")
-        {
-            Environment.Exit(0);
-        }
-        else
-        {
-            Console.WriteLine("I Dont understand that commend");
-        }
-    }
-}
 
-while (room == 6)
-{
-    if (prompt == 0)
-    {
-        Console.WriteLine("Alchemist’s garden");
-        prompt = 1;
-        Console.WriteLine(">>  ");
-        string room1 = Console.ReadLine();
-        Console.WriteLine(room1);
-        if (room1.ToLower() == "N")
-        {
-            Console.WriteLine("There is a river here, you can't walk onto that.");
-        }
-        else if (room1.ToLower() == "E")
-        {
-            Console.WriteLine("There is a river here, you can't walk onto that.");
-        }
-        else if (room1.ToLower() == "S")
-        {
-            room = 5;
-            prompt = 0;
-        }
-        else if (room1.ToLower() == "W")
-        {
-            Console.WriteLine("There is a river here, you can't walk onto that.");
-        }
-        else if (room1.ToLower() == "quit")
-        {
-            Environment.Exit(0);
-        }
-        else
-        {
-            Console.WriteLine("I Dont understand that commend");
-        }
-    }
-}
-
-while (room == 7)
-{
-    if (prompt == 0)
-    {
-        Console.WriteLine("Guard post");
-        prompt = 1;
-        Console.WriteLine(">>  ");
-        string room1 = Console.ReadLine();
-        Console.WriteLine(room1);
-        if (room1.ToLower() == "E")
-        {
-            room = 8;
-            prompt = 0;
-        }
-        else if (room1.ToLower() == "S" || room1.ToLower() == "N" || room1.ToLower() == "W")
-        {
-            Console.WriteLine("There is a river here, you can't walk onto that.");
-        }
-        else if (room1.ToLower() == "quit")
-        {
-            Environment.Exit(0);
-        }
-        else
-        {
-            Console.WriteLine("I Dont understand that commend");
-        }
-    }
-}
-
-while (room == 8)
-{
-    if (prompt == 0)
-    {
-        Console.WriteLine("Bridge");
-        prompt = 1;
-        Console.WriteLine(">>  ");
-        string room1 = Console.ReadLine();
-        Console.WriteLine(room1);
-        if (room1.ToLower() == "N")
-        {
-            room = 2;
-            prompt = 0;
-        }
-        else if (room1.ToLower() == "E")
-        {
-            Console.WriteLine("There seems to be a spider forest ");
-        }
-        else if (room1.ToLower() == "S")
-        {
-            Console.WriteLine("The road seems to be blocked by fallen trees and rocks. U can't go here.");
-        }
-        else if (room1.ToLower() == "W")
-        {
-            Console.WriteLine("There is a river here, you can't walk onto that.");
-        }
-        else if (room1.ToLower() == "quit")
-        {
-            Environment.Exit(0);
-        }
-        else
-        {
-            Console.WriteLine("I Dont understand that commend");
-        }
-    }
-}
-while (room == 9)
-{
-    if (prompt == 0)
-    {
-        Console.WriteLine("Spider forest");
-        prompt = 1;
-        Console.WriteLine(">>  ");
-        string room1 = Console.ReadLine();
-        Console.WriteLine(room1);
-        if (room1.ToLower() == "N")
-        {
-            Console.WriteLine("You can't go here");
-        }
-        else if (room1.ToLower() == "E")
-        {
-            Console.WriteLine("There seems to be a large forest blocking the road.");
-        }
-        else if (room1.ToLower() == "S")
-        {
-            Console.WriteLine("The road seems to be blocked by fallen trees and rocks. U can't go here.");
-        }
-        else if (room1.ToLower() == "W")
-        {
-            Console.WriteLine("You went back to the bridge");
-        }
-        else if (room1.ToLower() == "quit")
-        {
-            Environment.Exit(0);
-        }
-        else
-        {
-            Console.WriteLine("I Dont understand that commend");
-        }
-    }
-}
 
