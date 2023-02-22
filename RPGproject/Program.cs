@@ -10,9 +10,11 @@
 
 
 
+using System;
+
 int room = 1;
 int prompt = 0;
-Console.WriteLine("Useful commands:\r\n- (/N/E/S/W) , inspect map, quit");
+Console.WriteLine("Useful commands:\r\n- (/N/E/S/W) , inspect compass, quit");
 
 bool asking = true;
 while (asking)
@@ -25,8 +27,11 @@ while (asking)
             Console.WriteLine("This is where you live.");
             Console.WriteLine(">>  ");
             string room1 = Console.ReadLine();
-            Console.WriteLine(room1);
-            if (room1.ToUpper() == "N")
+            if (room1.ToLower() == "inspect compass")
+            {
+                Console.WriteLine("    N\r\n    |");
+            }
+            else if (room1.ToUpper() == "N")
             {
                 room = 2;
                 prompt = 0;
@@ -53,6 +58,10 @@ while (asking)
             Console.WriteLine("This is the townsquare.");
             Console.WriteLine(">>  ");
             string room1 = Console.ReadLine();
+            if (room1.ToLower() == "isnpect compass")
+            {
+                Console.WriteLine("    N\r\n    |\r\nW---|---E\r\n    |\r\n    S");
+            }
             if (room1.ToUpper() == "N")
             {
                 room = 5;
@@ -78,13 +87,13 @@ while (asking)
             {
                 Environment.Exit(0);
             }
-
             else
             {
                 Console.WriteLine("I Dont understand that command");
             }
         }
     }
+
     while (room == 3)
     {
         if (prompt == 0)
@@ -93,7 +102,11 @@ while (asking)
             Console.WriteLine("This is the Farmer's place");
             Console.WriteLine(">>  ");
             string room1 = Console.ReadLine();
-            if (room1.ToUpper() == "N")
+            if (room1.ToLower() == "isnpect compass")
+            {
+                Console.WriteLine("W---|---E");
+            }
+            else if (room1.ToUpper() == "N")
             {
                 Console.WriteLine("There is a river here, you can't walk onto that.");
             }
@@ -132,13 +145,19 @@ while (asking)
             Console.WriteLine(">>  ");
             string room1 = Console.ReadLine();
             Console.WriteLine(room1);
-            if (room1.ToUpper() == "N")
+            if (room1.ToLower() == "isnpect compass")
+            {
+                Console.WriteLine("    |---E");
+            }
+            else if (room1.ToUpper() == "N")
             {
                 Console.WriteLine("There is a river here, you can't walk onto that.");
             }
             else if (room1.ToUpper() == "E")
             {
                 Console.WriteLine("Farmer's place");
+                room = 3; 
+                prompt = 0;
             }
             else if (room1.ToUpper() == "S")
             {
@@ -168,7 +187,11 @@ while (asking)
             Console.WriteLine(">>  ");
             string room1 = Console.ReadLine();
             Console.WriteLine(room1);
-            if (room1.ToUpper() == "N")
+            if (room1.ToLower() == "isnpect compass")
+            {
+                Console.WriteLine("    N\r\n    |\r\n    |\r\n    |\r\n    S");
+            }
+            else if (room1.ToUpper() == "N")
             {
                 room = 6;
                 prompt = 0;
@@ -205,7 +228,11 @@ while (asking)
             Console.WriteLine(">>  ");
             string room1 = Console.ReadLine();
             Console.WriteLine(room1);
-            if (room1.ToUpper() == "N")
+            if (room1.ToLower() == "isnpect compass")
+            {
+                Console.WriteLine("    |\r\n    S");
+            }
+            else if (room1.ToUpper() == "N")
             {
                 Console.WriteLine("There is a river here, you can't walk onto that.");
             }
@@ -241,12 +268,21 @@ while (asking)
             Console.WriteLine(">>  ");
             string room1 = Console.ReadLine();
             Console.WriteLine(room1);
-            if (room1.ToUpper() == "E")
+            if (room1.ToLower() == "isnpect compass")
+            {
+                Console.WriteLine("W---|---E");
+            }
+            else if (room1.ToUpper() == "E")
             {
                 room = 8;
                 prompt = 0;
             }
-            else if (room1.ToUpper() == "S" || room1.ToUpper() == "N" || room1.ToUpper() == "W")
+            else if (room1.ToUpper() == "W") 
+            {
+                room = 6;
+                prompt = 0;
+            }
+            else if (room1.ToUpper() == "S" || room1.ToUpper() == "N")
             {
                 Console.WriteLine("There is a river here, you can't walk onto that.");
             }
@@ -269,14 +305,19 @@ while (asking)
             Console.WriteLine(">>  ");
             string room1 = Console.ReadLine();
             Console.WriteLine(room1);
-            if (room1.ToUpper() == "N")
+            if (room1.ToLower() == "isnpect compass")
             {
-                room = 2;
-                prompt = 0;
+                Console.WriteLine("W---|---E");
+            }
+            else if (room1.ToUpper() == "N")
+            {
+                Console.WriteLine("The road seems to be blocked by fallen trees and rocks. U can't go here.");
             }
             else if (room1.ToUpper() == "E")
             {
                 Console.WriteLine("There seems to be a spider forest ");
+                room = 9;
+                prompt = 0;
             }
             else if (room1.ToUpper() == "S")
             {
@@ -284,7 +325,9 @@ while (asking)
             }
             else if (room1.ToUpper() == "W")
             {
-                Console.WriteLine("There is a river here, you can't walk onto that.");
+                Console.WriteLine("You went back to the Guards post");
+                room = 7;
+                prompt = 0;
             }
             else if (room1.ToLower() == "quit")
             {
@@ -304,11 +347,16 @@ while (asking)
             Console.WriteLine(">>  ");
             string room1 = Console.ReadLine();
             Console.WriteLine(room1);
-            if (room1.ToUpper() == "N")
+            if (room1.ToLower() == "isnpect compass")
+            {
+                Console.WriteLine("W---|");
+            }
+            else if (room1.ToUpper() == "N")
             {
                 Console.WriteLine("You can't go here");
             }
-            else if (room1.ToUpper() == "E")
+            else if (room1.
+                ToUpper() == "E")
             {
                 Console.WriteLine("There seems to be a large forest blocking the road.");
             }
@@ -318,7 +366,10 @@ while (asking)
             }
             else if (room1.ToUpper() == "W")
             {
+                
                 Console.WriteLine("You went back to the bridge");
+                room = 8;
+                prompt = 0;
             }
             else if (room1.ToLower() == "quit")
             {
