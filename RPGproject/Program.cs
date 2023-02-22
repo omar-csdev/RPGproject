@@ -14,7 +14,7 @@ using System;
 
 int room = 1;
 int prompt = 0;
-Console.WriteLine("Useful commands:\r\n- (/N/E/S/W) , inspect compass, quit");
+Console.WriteLine("Useful commands:\r\n- (/N/E/S/W)  \r\n- inspect compass \r\n-quit");
 
 bool asking = true;
 while (asking)
@@ -58,7 +58,7 @@ while (asking)
             Console.WriteLine("This is the townsquare.");
             Console.WriteLine(">>  ");
             string room1 = Console.ReadLine();
-            if (room1.ToLower() == "isnpect compass")
+            if (room1.ToLower() == "inspect compass")
             {
                 Console.WriteLine("    N\r\n    |\r\nW---|---E\r\n    |\r\n    S");
             }
