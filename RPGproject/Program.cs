@@ -17,8 +17,8 @@ while (room == 1)
 {
     if (prompt == 0)
     {
-        Console.WriteLine("Parking lot");
-        Console.WriteLine("This is just an ordinary parking lot");
+        Console.WriteLine("Your house");
+        Console.WriteLine("This is where you live.");
         prompt = 1;
         Console.WriteLine(">>  ");
         string room1 = Console.ReadLine();
